@@ -1,0 +1,17 @@
+name: train-eval
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: iterative/setup-cml@v1
+      - name: Train & eval
+        run: |
+          pip install -r requirements.txt
+          python get_data.py
+          python training.py
+          python evaluation.py
+          cat rmse.txt >> report.md
+          cml-send-comment report.md
