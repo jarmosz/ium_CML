@@ -1,11 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
-import kaggle
-
-kaggle.api.authenticate()
-
-kaggle.api.dataset_download_files('ruchi798/movies-on-netflix-prime-video-hulu-and-disney', path='.', unzip=True)
 
 # odczyt danych
 film_data = pd.read_csv('MoviesOnStreamingPlatforms_updated.csv')
