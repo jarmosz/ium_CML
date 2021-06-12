@@ -9,10 +9,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.layers.experimental import preprocessing
 
-arguments = sys.argv[1:]
-
-verbose = int(arguments[0])
-epochs = int(arguments[1])
+verbose = 30
+epochs = 50
 
 pd.set_option("display.max_columns", None)
 
