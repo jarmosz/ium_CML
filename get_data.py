@@ -35,17 +35,3 @@ film_train.to_csv('MoviesOnStreamingPlatforms_updated.train')
 film_test.to_csv('MoviesOnStreamingPlatforms_updated.test')
 film_valid.to_csv('MoviesOnStreamingPlatforms_updated.dev')
 
-# Statystki głównego zbioru i podzbiorów
-for i, data_set in enumerate([film_data, film_train, film_valid, film_test]):
-    if i == 0:
-        print("Główny zbiór danych")
-    elif i == 1:
-        print("Zbiór trenujący")
-    elif i == 2:
-        print("Zbiór walidujący")
-    if i == 3:
-        print("Zbiór testowy")
-    print(len(data_set))
-    print(data_set.describe().loc[['count','mean', 'max', 'min', 'std', '50%']])
-    [print(data_set[name].value_counts()) for idx, name in enumerate(data_set)]
-
